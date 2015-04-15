@@ -2,7 +2,8 @@
 
 battery=$(acpi)
 
-DIR="/home/jango/.customApps/batteryNotifications/audio/"
+# The audio files location
+DIR="/path/to/audio/files/"
 BATTERYFULLYCHARGED="charged"
 BATTERYDISCHARGED="discharged"
 LANG=""
