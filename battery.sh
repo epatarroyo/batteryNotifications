@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# First of all, make this script executable
+# chmod +x battery.sh
+#
+# Install acpi
+# apt-get install acpi (Debian/Ubuntu)
+# yum install acpi (RedHat/CentOS/Fedora)
+# Then create a schedule to run the script every 5 minutes
+# using crontab
+# crontab -e
+# */5 * * * * /path/to/script/battery.sh
+
+# Get the battery status and store it in a variable
 battery=$(acpi)
 
 # The audio files location
