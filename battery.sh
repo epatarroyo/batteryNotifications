@@ -9,7 +9,7 @@
 # Then create a schedule to run the script every 5 minutes
 # using crontab
 # crontab -e
-# */5 * * * * /path/to/script/battery.sh
+# */5 * * * * ~/bin/batteryNotifications/battery.sh
 
 # Get the battery status and store it in a variable
 battery=$(acpi)
