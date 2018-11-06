@@ -4,8 +4,8 @@
 # chmod +x battery.sh
 #
 # Install acpi
-# apt-get install acpi (Debian/Ubuntu)
-# yum install acpi (RedHat/CentOS/Fedora)
+# sudo apt-get install acpi (Debian/Ubuntu)
+# sudo dnf install acpi (RedHat/CentOS/Fedora)
 # Then create a schedule to run the script every 5 minutes
 # using crontab
 # crontab -e
@@ -15,7 +15,7 @@
 battery=$(acpi)
 
 # The audio files location
-DIR="/path/to/audio/files/"
+DIR="~/bin/batteryNotifications/audio/"
 BATTERYFULLYCHARGED="charged"
 BATTERYDISCHARGED="discharged"
 LANG=""
