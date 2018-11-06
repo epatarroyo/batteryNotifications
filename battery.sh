@@ -15,7 +15,7 @@
 battery=$(acpi)
 
 # The audio files location
-DIR="~/bin/batteryNotifications/audio/"
+DIR="$HOME/bin/batteryNotifications/audio/"
 BATTERYFULLYCHARGED="charged"
 BATTERYDISCHARGED="discharged"
 LANG=""
@@ -34,7 +34,7 @@ elif [[ "$battery" =~ "Discharging" ]]; then
   percentage=${battery:24:2}
   percentage=${percentage//%}
 
-  if [ "$percentage" -lt 20 ]; then
+  if [ "$percentage" -lt 10 ]; then
     aplay -q "$DIR$BATTERYDISCHARGED$LANG$EXT"
     notify-send 'Battery low' 'please plug your computer!' -u critical -i battery-empty
   fi
