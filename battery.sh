@@ -20,7 +20,7 @@ BATTERYFULLYCHARGED="batteryFullyCharged"
 BATTERYDISCHARGED="batteryDischarged"
 LANG="-en"
 EXT=".wav"
-LOGFILE="battery.log"
+LOGFILE="$HOME/bin/batteryNotifications/battery.log"
 
 # do not forget to create your own audio files
 # batteryDischarged-en.wav
