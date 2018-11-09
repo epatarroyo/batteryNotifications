@@ -20,6 +20,7 @@ BATTERYFULLYCHARGED="batteryFullyCharged"
 BATTERYDISCHARGED="batteryDischarged"
 LANG="-en"
 EXT=".wav"
+LOGFILE="battery.log"
 
 # do not forget to create your own audio files
 # batteryDischarged-en.wav
@@ -28,11 +29,13 @@ EXT=".wav"
 if [[ "$battery" =~ "Full" ]]; then
   aplay -q "$DIR$BATTERYFULLYCHARGED$LANG$EXT"
   notify-send 'Battery fully charged' 'please unplug your computer!' -u critical -i battery-full-charging
+  echo "[`date`] - Battery full" >> "$LOGFILE"
 
 # In my case, sometimes, the battery status never reach 100%
 elif [[ "$battery" =~ "99" ]]; then
   aplay -q "$DIR$BATTERYFULLYCHARGED$LANG$EXT"
   notify-send 'Battery fully charged' 'please unplug your computer!' -u critical -i battery-full-charging
+  echo "[`date`] - Battery full" >> "$LOGFILE"
 
 elif [[ "$battery" =~ "Discharging" ]]; then
   percentage=${battery:24:2}
@@ -41,9 +44,9 @@ elif [[ "$battery" =~ "Discharging" ]]; then
   if [ "$percentage" -lt 10 ]; then
     aplay -q "$DIR$BATTERYDISCHARGED$LANG$EXT"
     notify-send 'Battery low' 'please plug your computer!' -u critical -i battery-empty
+    echo "[`date`] - Battery empty - $percentage" >> "$LOGFILE"
   fi
 
 else
     echo "do nothing"
-
 fi

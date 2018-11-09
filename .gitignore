@@ -1,2 +1,5 @@
 # user have to make his own audio files
 audio/
+
+# ignore log
+battery.log
