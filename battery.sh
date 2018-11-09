@@ -16,10 +16,14 @@ battery=$(acpi)
 
 # The audio files location
 DIR="$HOME/bin/batteryNotifications/audio/"
-BATTERYFULLYCHARGED="charged"
-BATTERYDISCHARGED="discharged"
-LANG=""
+BATTERYFULLYCHARGED="batteryFullyCharged"
+BATTERYDISCHARGED="batteryDischarged"
+LANG="-en"
 EXT=".wav"
+
+# do not forget to create your own audio files
+# batteryDischarged-en.wav
+# batteryFullyCharged-en.wav
 
 if [[ "$battery" =~ "Full" ]]; then
   aplay -q "$DIR$BATTERYFULLYCHARGED$LANG$EXT"
